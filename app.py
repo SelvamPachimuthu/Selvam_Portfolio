@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 # ---------------- PAGE CONFIG ----------------
 st.set_page_config(
     page_title="Selvam | Portfolio",
-    page_icon="💊",
+     page_icon="💼",
     layout="wide"
 )
 
@@ -124,4 +124,5 @@ elif section == "Contact":
     """)
 
     st.success("Thank you for visiting my portfolio!")
+
 
