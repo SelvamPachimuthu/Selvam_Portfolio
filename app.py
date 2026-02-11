@@ -5,17 +5,17 @@ import matplotlib.pyplot as plt
 
 # ---------------- PAGE CONFIG ----------------
 st.set_page_config(
-    page_title="Selvam | Portfolio",
+    page_title="Selvam P | Portfolio",
      page_icon="💼",
     layout="wide"
 )
 
 # ---------------- HEADER ----------------
-st.title("  Selvam Pachimuthu –  Portfolio")
-st.subheader("Pharmacovigilance | Clinical Data | Data Analytics")
+st.title("  Selvam P –  Portfolio")
+st.subheader("Pharmacovigilance | Clinical Data |Healthcare Data Analytics")
 
 st.write("""
-Experienced Pharmacovigilance professional transitioning into **Data Analytics & Data Science**.
+Experienced Pharmacovigilance professional **handling healthcare safety data Analytics **.
 This portfolio demonstrates my skills in **Python, Data Analysis, Visualization, and Healthcare Data**.
 """)
 
@@ -58,6 +58,7 @@ elif section == "Skills":
         - Clinical Data Management
         - Safety Reports
         - Healthcare Analytics
+        - Tools: Argus, Clinevo Safety, Veeva Vault RIM, DST (Drug Safety Triager), and PVAI (Pharmacovigilance Artificial Intelligence)
         """)
 
 # ---------------- PROJECTS ----------------
@@ -124,5 +125,6 @@ elif section == "Contact":
     """)
 
     st.success("Thank you for visiting my portfolio!")
+
 
 
