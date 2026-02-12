@@ -12,10 +12,10 @@ st.set_page_config(
 
 # ---------------- HEADER ----------------
 st.title("  Selvam P –  Portfolio")
-st.subheader("Pharmacovigilance | Clinical Data |Healthcare Data Analytics")
+st.subheader("Pharmacovigilance | Clinical Safety Data Analytics")
 
 st.write("""
-Experienced Pharmacovigilance professional **handling healthcare safety data Analytics **.
+Experienced Pharmacovigilance professional **handling healthcare safety data **.
 This portfolio demonstrates my skills in **Python, Data Analysis, Visualization, and Healthcare Data**.
 """)
 
@@ -31,8 +31,8 @@ if section == "About Me":
     st.header("👤 About Me")
     st.write("""
 - 💼 4+ years experience in **Pharmacovigilance**
-- 🏥 Worked with safety data, case processing, medical review
-- 📈 Transitioning into **Data Analyst / Data Scientist**
+- 🏥 Worked with safety data, literature review, case processing, signal and risk detection
+- 📈 Transitioning into **Data Analyst**
 - 🎯 Interested in Healthcare, Real-World Evidence & Analytics
     """)
 
@@ -55,8 +55,8 @@ elif section == "Skills":
         st.subheader("Domain Knowledge")
         st.write("""
         - Pharmacovigilance
-        - Clinical Data Management
-        - Safety Reports
+        - Clinical Safety Data Management
+        - Safety Reports Handling 
         - Healthcare Analytics
         - Tools: Argus, Clinevo Safety, Veeva Vault RIM, DST (Drug Safety Triager), and PVAI (Pharmacovigilance Artificial Intelligence)
         """)
@@ -119,12 +119,13 @@ elif section == "Contact":
     st.header("📞 Contact")
 
     st.write("""
-    **Email:** selvam@email.com  
-    **LinkedIn:** https://linkedin.com/in/yourprofile  
-    **GitHub:** https://github.com/yourusername  
+    **Email:** selvampachimuthu98@gmail.com  
+    **LinkedIn:**https://www.linkedin.com/in/selvam-p-a9593a189/ 
+    **GitHub:** https://github.com/SelvamPachimuthu  
     """)
 
     st.success("Thank you for visiting my portfolio!")
+
 
 
 
