@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from PIL import Image
 
 # ---------------- PAGE CONFIG ----------------
 st.set_page_config(
@@ -35,6 +36,7 @@ if section == "About Me":
 - 📈 Transitioning into **Data Analyst**
 - 🎯 Interested in Healthcare, Real-World Evidence & Analytics
     """)
+- image = Image.open(""C:\Users\ADMIN\Downloads\Personal\Selvam_Image.jpg"")  # Replace with your image file path
 
 # ---------------- SKILLS ----------------
 elif section == "Skills":
@@ -120,11 +122,12 @@ elif section == "Contact":
 
     st.write("""
     **Email:** selvampachimuthu98@gmail.com  
-    **LinkedIn:**https://www.linkedin.com/in/selvam-p-a9593a189/ 
+    **LinkedIn:** https://www.linkedin.com/in/selvam-p-a9593a189/ 
     **GitHub:** https://github.com/SelvamPachimuthu  
     """)
 
     st.success("Thank you for visiting my portfolio!")
+
 
 
 
