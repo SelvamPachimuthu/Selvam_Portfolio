@@ -123,9 +123,11 @@ elif section == "Contact":
     **Email:** selvampachimuthu98@gmail.com  
     **LinkedIn:** https://www.linkedin.com/in/selvam-p-a9593a189/ 
     **GitHub:** https://github.com/SelvamPachimuthu  
+     **WhatsApp:** [https://wa.me/919876543210](https://wa.me/8681064379)  (replace with your number)
     """)
 
     st.success("Thank you for visiting my portfolio!")
+
 
 
 
