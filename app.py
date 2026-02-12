@@ -36,7 +36,8 @@ if section == "About Me":
 - 📈 Transitioning into **Data Analyst**
 - 🎯 Interested in Healthcare, Real-World Evidence & Analytics
     """)
-- image = Image.open(""C:\Users\ADMIN\Downloads\Personal\Selvam_Image.jpg"")  # Replace with your image file path
+- image = Image.open(r"C:\Users\ADMIN\Downloads\Personal\Selvam_Image.jpg")
+- st.image(image, caption="Selvam Image", use_column_width=True)
 
 # ---------------- SKILLS ----------------
 elif section == "Skills":
@@ -127,6 +128,7 @@ elif section == "Contact":
     """)
 
     st.success("Thank you for visiting my portfolio!")
+
 
 
 
