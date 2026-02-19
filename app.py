@@ -13,10 +13,10 @@ st.set_page_config(
 
 # ---------------- HEADER ----------------
 st.title("  Selvam P –  Portfolio")
-st.subheader("Pharmacovigilance | Clinical Safety Data Analytics")
+st.subheader("Clinical Data Analyst| Safety Data Management |Pharmacovigilance")
 
 st.write("""
-Experienced Pharmacovigilance professional **Medicines clinical and safety data **.
+Experienced Pharmacovigilance professional handling **Clinical safety data of medicines, ensuring patients safety by doing drug data analysis  **.
 This portfolio demonstrates my skills in **Clinical data handling, Python, Data Analysis, Visualization, and Healthcare Data**.
 """)
 
@@ -66,9 +66,9 @@ elif section == "Skills":
         - Tools: Argus, Clinevo Safety, Veeva Vault RIM, DST (Drug Safety Triager), and PVAI (Pharmacovigilance Artificial Intelligence)
         """)
 
-# ---------------- PROJECTS- Data Analysis Demo ----------------
-elif section == "Projects":
-    st.header("📂 Projects")
+# ---------------- Projects - Data Analysis Demo ----------------
+elif section == "Projects - Data Analysis Demo":
+    st.header("📂 Projects - Data Analysis Demo")
 
     # =====================================================
     # 1️⃣ Adverse Event Data Analysis (Pharmacovigilance)
@@ -244,6 +244,7 @@ elif section == "Contact":
     """)
 
     st.success("Thank you for visiting my portfolio!")
+
 
 
 
