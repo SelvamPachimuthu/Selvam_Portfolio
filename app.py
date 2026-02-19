@@ -24,7 +24,7 @@ This portfolio demonstrates my skills in **Clinical data handling, Python, Data 
 st.sidebar.header("📌 Navigation")
 section = st.sidebar.radio(
     "Go to",
-    ["About Me", "Skills", "Projects", "Data Analysis Demo", "Contact"]
+    ["About Me", "Skills", "Projects - Data Analysis Demo", "Contact"]
 )
 
 # ---------------- ABOUT ME ----------------
@@ -66,118 +66,170 @@ elif section == "Skills":
         - Tools: Argus, Clinevo Safety, Veeva Vault RIM, DST (Drug Safety Triager), and PVAI (Pharmacovigilance Artificial Intelligence)
         """)
 
-# ---------------- PROJECTS ----------------
+# ---------------- PROJECTS- Data Analysis Demo ----------------
 elif section == "Projects":
     st.header("📂 Projects")
 
-    # ---------- PROJECT 1 ----------
+    # =====================================================
+    # 1️⃣ Adverse Event Data Analysis (Pharmacovigilance)
+    # =====================================================
     st.subheader("1️⃣ Adverse Event Data Analysis (Pharmacovigilance)")
+
     st.write("""
-    - Cleaned and analyzed Adverse Event (AE) datasets
-    - Identified most frequently reported reactions
-    - Performed trend analysis using Pandas
-    - Visualized AE distribution using Matplotlib
-    - Strengthened signal detection understanding
+    - Cleaned and analyzed Adverse Event (AE) datasets  
+    - Identified most frequently reported reactions  
+    - Performed trend analysis using Pandas  
+    - Visualized AE distribution using Matplotlib  
+    - Strengthened signal detection understanding  
     """)
 
-    # ---------- PROJECT 2 ----------
+    # Sample AE dataset
+    ae_data = {
+        "AE_Term": np.random.choice(
+            ["Headache", "Nausea", "Vomiting", "Fatigue", "Dizziness"], 100
+        )
+    }
+
+    ae_df = pd.DataFrame(ae_data)
+
+    st.write("### 🔹 AE Frequency Distribution")
+    ae_counts = ae_df["AE_Term"].value_counts()
+    st.dataframe(ae_counts)
+
+    fig1, ax1 = plt.subplots()
+    ae_counts.plot(kind="bar", ax=ax1)
+    ax1.set_title("Most Frequently Reported AEs")
+    st.pyplot(fig1)
+
+    st.markdown("---")
+
+    # =====================================================
+    # 2️⃣ Clinical Trial Demographics Dashboard
+    # =====================================================
     st.subheader("2️⃣ Clinical Trial Demographics Dashboard")
+
     st.write("""
-    - Analyzed subject-level demographic data (Age, Gender distribution)
-    - Generated summary statistics for study population
-    - Built visual dashboards using Pandas & Matplotlib
-    - Supported study-level reporting insights
+    - Analyzed subject-level demographic data  
+    - Generated summary statistics  
+    - Built visual dashboards  
+    - Supported study-level reporting insights  
     """)
 
-    # ---------- PROJECT 3 ----------
+    demo_data = {
+        "Age": np.random.randint(18, 70, 60),
+        "Gender": np.random.choice(["Male", "Female"], 60)
+    }
+
+    demo_df = pd.DataFrame(demo_data)
+
+    st.write("### 🔹 Age Summary Statistics")
+    st.dataframe(demo_df.describe())
+
+    st.write("### 🔹 Gender Distribution")
+    gender_counts = demo_df["Gender"].value_counts()
+    st.dataframe(gender_counts)
+
+    fig2, ax2 = plt.subplots()
+    gender_counts.plot(kind="bar", ax=ax2)
+    ax2.set_title("Gender Distribution")
+    st.pyplot(fig2)
+
+    st.markdown("---")
+
+    # =====================================================
+    # 3️⃣ Clinical Data Discrepancy & Query Management
+    # =====================================================
     st.subheader("3️⃣ Clinical Data Discrepancy & Query Management (CDM Simulation)")
+
     st.write("""
-    - Identified missing, inconsistent, and protocol-deviated data
-    - Simulated query generation workflow similar to RAVE/Veeva EDC
-    - Implemented validation checks (range, cross-field, mandatory checks)
-    - Reviewed data listings for accuracy and consistency
-    - Generated query status tracking reports
+    - Identified missing & inconsistent data  
+    - Implemented validation checks  
+    - Simulated query generation workflow  
+    - Generated query tracking reports  
     """)
 
-    # ---------- PROJECT 4 ----------
-    st.subheader("4️⃣ SAE Reconciliation & Data Listing Review")
-    st.write("""
-    - Performed Serious Adverse Event (SAE) reconciliation
-    - Compared AE datasets between clinical and safety records
-    - Identified mismatches and generated clarification queries
-    - Ensured regulatory compliance and audit readiness
-    """)
-
-    # ---------- PROJECT 5 ----------
-    st.subheader("5️⃣ Excel to MySQL Data Automation")
-    st.write("""
-    - Automated bulk data upload from Excel to MySQL database
-    - Reduced manual effort and minimized entry errors
-    - Improved workflow efficiency and data integrity
-    """)
-
-
-# ---------------- DATA ANALYSIS DEMO ----------------
-elif section == "Data Analysis Demo":
-    st.header("📊 Clinical Data Management Demo")
-
-    st.write("Simulated Clinical Trial Dataset – Discrepancy & Query Management")
-
-    # Create sample clinical dataset
-    data = {
-        "Subject_ID": np.arange(1001, 1051),
+    cdm_data = {
+        "Subject_ID": np.arange(2001, 2051),
         "Age": np.random.randint(18, 80, 50),
-        "Gender": np.random.choice(["Male", "Female"], 50),
         "AE_Reported": np.random.choice(["Yes", "No"], 50),
         "AE_Term": np.random.choice(
-            ["Nausea", "Headache", "Fatigue", "Vomiting", None], 50
-        ),
+            ["Nausea", "Headache", "Fatigue", None], 50
+        )
+    }
+
+    cdm_df = pd.DataFrame(cdm_data)
+
+    # Logical validation
+    discrepancies = cdm_df[
+        (cdm_df["AE_Reported"] == "Yes") & (cdm_df["AE_Term"].isnull())
+    ]
+
+    st.write("### 🔹 Identified Data Queries")
+    st.dataframe(discrepancies)
+
+    st.write("Total Queries Identified:", len(discrepancies))
+
+    st.markdown("---")
+
+    # =====================================================
+    # 4️⃣ SAE Reconciliation & Data Listing Review
+    # =====================================================
+    st.subheader("4️⃣ SAE Reconciliation & Data Listing Review")
+
+    st.write("""
+    - Performed SAE reconciliation  
+    - Compared AE datasets  
+    - Identified mismatches  
+    - Ensured regulatory compliance  
+    """)
+
+    sae_data = {
+        "Subject_ID": np.arange(3001, 3051),
         "SAE_Flag": np.random.choice(["Yes", "No"], 50)
     }
 
-    df = pd.DataFrame(data)
+    sae_df = pd.DataFrame(sae_data)
 
-    # Introduce logical discrepancy
-    df.loc[df["AE_Reported"] == "No", "AE_Term"] = None
+    st.write("### 🔹 SAE Distribution")
+    sae_counts = sae_df["SAE_Flag"].value_counts()
+    st.dataframe(sae_counts)
 
-    st.subheader("🔹 Raw Clinical Data")
-    st.dataframe(df)
+    fig4, ax4 = plt.subplots()
+    sae_counts.plot(kind="bar", ax=ax4)
+    ax4.set_title("SAE Distribution")
+    st.pyplot(fig4)
 
-    # ---------------- VALIDATION CHECK ----------------
-    st.subheader("🔹 Data Validation Checks")
+    st.markdown("---")
 
-    discrepancies = df[
-        (df["AE_Reported"] == "Yes") & (df["AE_Term"].isnull())
-    ]
+    # =====================================================
+    # 5️⃣ Excel to MySQL Data Automation
+    # =====================================================
+    st.subheader("5️⃣ Excel to MySQL Data Automation")
 
-    st.write("### 🚨 Open Data Queries Identified")
-    st.dataframe(discrepancies)
+    st.write("""
+    - Automated bulk data upload  
+    - Reduced manual entry errors  
+    - Improved workflow efficiency  
+    - Ensured data integrity  
+    """)
 
-    # ---------------- QUERY STATUS REPORT ----------------
-    st.subheader("🔹 Query Status Summary")
+    automation_data = {
+        "Record_ID": np.arange(4001, 4021),
+        "Upload_Status": np.random.choice(
+            ["Success", "Failed"], 20, p=[0.9, 0.1]
+        )
+    }
 
-    total_records = len(df)
-    total_queries = len(discrepancies)
+    auto_df = pd.DataFrame(automation_data)
 
-    query_summary = pd.DataFrame({
-        "Total Records": [total_records],
-        "Open Queries": [total_queries],
-        "Query Rate (%)": [round((total_queries / total_records) * 100, 2)]
-    })
+    st.write("### 🔹 Upload Status Report")
+    status_counts = auto_df["Upload_Status"].value_counts()
+    st.dataframe(status_counts)
 
-    st.dataframe(query_summary)
-
-    # ---------------- SAE DISTRIBUTION ----------------
-    st.subheader("🔹 SAE Reconciliation Overview")
-
-    sae_counts = df["SAE_Flag"].value_counts()
-
-    fig, ax = plt.subplots()
-    sae_counts.plot(kind="bar", ax=ax)
-    ax.set_ylabel("Count")
-    ax.set_title("SAE Distribution")
-
-    st.pyplot(fig)
+    fig5, ax5 = plt.subplots()
+    status_counts.plot(kind="bar", ax=ax5)
+    ax5.set_title("Upload Success Rate")
+    st.pyplot(fig5)
 
 
 # ---------------- CONTACT ----------------
@@ -192,6 +244,7 @@ elif section == "Contact":
     """)
 
     st.success("Thank you for visiting my portfolio!")
+
 
 
 
