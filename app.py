@@ -13,6 +13,7 @@ st.set_page_config(
 
 # ---------------- MAIN PAGE ----------------
 st.title("Selvam P")
+st.write("Drug Safety Data Management")
 
 # ---------------- SIDEBAR ----------------
 st.sidebar.header("📌 Navigation")
@@ -25,7 +26,7 @@ section = st.sidebar.radio(
 if section == "About Me":
     st.subheader("About Me")
     st.write("""
-I am an experienced professional with **4.8 years in Pharmacovigilance**, analyzing clinical safety data, 
+I am an experienced professional with **4.8 years in Drug Safety Data Management**, analyzing clinical safety data, 
 and now leveraging my skills into **Data Analysis and Visualization**.  
 I combine domain knowledge in **healthcare and patient safety** with strong skills in **Python, data processing, and visualization** to extract actionable insights from complex datasets.
 
