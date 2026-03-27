@@ -6,7 +6,7 @@ from PIL import Image
 
 # ---------------- PAGE CONFIG ----------------
 st.set_page_config(
-    page_title="Selvam P | Portfolio",
+    page_title="Selvam P | Projects",
      page_icon="💼",
     layout="wide"
 )
@@ -19,7 +19,7 @@ st.write("Drug Safety Data Management")
 st.sidebar.header("📌 Navigation")
 section = st.sidebar.radio(
     "Go to",
-    ["About Me", "Skills", "Projects - Data Analysis Demo", "Contact"]
+    ["About Me", "Projects - Data Analysis Demo", "Contact"]
 )
 
 # ---------------- ABOUT ME ----------------
@@ -40,35 +40,8 @@ I combine domain knowledge in **healthcare and patient safety** with strong skil
 - Built reports and dashboards to support decision-making
 """)
 
-# ---------------- SKILLS ----------------
-elif section == "Skills":
-    st.header("🛠 Skills")
 
-    col1, col2 = st.columns(2)
-
-    with col1:
-        st.subheader("Programming & Tools")
-        st.write("""
-        - Python (Pandas, NumPy, Matplotlib)
-        - SQL (MySQL)
-        - Excel (Advanced)
-        - Streamlit
-        """)
-
-    with col2:
-        st.subheader("Domain Knowledge")
-        st.write("""
-        - Clinical Data Management
-        - Data Cleaning
-        - Query Handling
-        - Pharmacovigilance
-        - Clinical Safety Data Management
-        - Safety Reports Handling 
-        - Quality & Compliance: GCP, GVP, SOP Frameworks, Audit & Inspection Readiness
-        - Healthcare Analytics
-        - Tools: Argus, Clinevo Safety, Veeva Vault RIM, DST (Drug Safety Triager), and PVAI (Pharmacovigilance Artificial Intelligence)
-        """)
-
+    
 # ---------------- Projects - Data Analysis Demo ----------------
 elif section == "Projects - Data Analysis Demo":
     st.header("📂 Projects - Data Analysis Demo")
